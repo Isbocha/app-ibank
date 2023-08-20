@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/lyi9ni2nd1lwpeht?svg=true)](https://ci.appveyor.com/project/Isbocha/app-ibank)
