@@ -29,9 +29,9 @@ public class DataGenerator {
         // TODO: отправить запрос на указанный в требованиях path, передав в body запроса объект user
         //  и не забудьте передать подготовленную спецификацию requestSpec.
         //  Пример реализации метода показан в условии к задаче.
-        .given() // "дано"
+        given() // "дано"
                 .spec(requestSpec) // указываем, какую спецификацию используем
-                .body() // передаём в теле объект, который будет преобразован в JSON
+                .body(user) // передаём в теле объект, который будет преобразован в JSON
                 .when() // "когда"
                 .post("/api/system/users") // на какой путь относительно BaseUri отправляем запрос
                 .then() // "тогда ожидаем"
@@ -58,7 +58,7 @@ public class DataGenerator {
 
         public static RegistrationDto getUser(String status) {
             // TODO: создать пользователя user используя методы getRandomLogin(), getRandomPassword() и параметр status
-            RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(),status);
+            RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
             return user;
         }
 
@@ -66,7 +66,7 @@ public class DataGenerator {
             // TODO: объявить переменную registeredUser и присвоить ей значение возвращённое getUser(status).
             // Послать запрос на регистрацию пользователя с помощью вызова sendRequest(registeredUser)
             RegistrationDto registeredUser = getUser(status);
-           sendRequest(registeredUser);
+            sendRequest(registeredUser);
             return registeredUser;
         }
     }
